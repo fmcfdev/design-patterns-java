@@ -9,18 +9,19 @@ public class Main {
         try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Informe seu pedido: (L) Latte - (M) Machiato");
-            String coffeeOrder = scanner.next().toUpperCase();
-            makeOrder(coffeeOrder);
+            System.out.print(">> ");
+            String coffeeType = scanner.next().toUpperCase();
+            makeOrder(coffeeType);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    private static void makeOrder(String coffeeOrder) throws Exception {
-        if (coffeeOrder == null || coffeeOrder.isEmpty()) {
-            throw new Exception("Coffee unavailable!");
+    private static void makeOrder(String coffeeType) throws Exception {
+        if (coffeeType == null || coffeeType.isEmpty()) {
+            throw new Exception("Café não disponível!");
         }
-        Coffee coffee = CoffeeFactory.createCoffee(coffeeOrder);
+        Coffee coffee = CoffeeFactory.createCoffee(coffeeType);
         coffee.prepare();
         threadSleep(); //delay to simulate coffee preparation time
         coffee.serve();

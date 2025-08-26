@@ -5,12 +5,12 @@ import br.com.fabriciomcf.simplefactory.modal.LatteCoffee;
 import br.com.fabriciomcf.simplefactory.modal.MachiattoCoffee;
 
 public class CoffeeFactory {
-    public static Coffee createCoffee(String coffeeOrder) throws Exception {
-        if("L".equals(coffeeOrder)) {
+    public static Coffee createCoffee(String coffeeType) throws Exception {
+        if("L".equals(coffeeType)) {
             return new LatteCoffee();
-        } else if ("M".equals(coffeeOrder)) {
+        } else if ("M".equals(coffeeType)) {
             return new MachiattoCoffee();
         }
-        throw new Exception("Invalid coffee order!");
+        throw new Exception("Não servimos o café solicitado!");
     }
 }
