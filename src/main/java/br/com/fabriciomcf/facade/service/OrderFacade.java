@@ -16,9 +16,9 @@ public class OrderFacade {
     }
 
     public void processOrder(Order order) {
-        paymentProcessor.processPayment(order.getAmmount());
-        inventoryManager.updateStock(order.getProductId(), order.getQuantity());
-        shippingService.initiateShipping(order.getAddress());
-        notifier.sendOrderConfirmation(order.getEmail());
+        paymentProcessor.processPayment(order.ammount());
+        inventoryManager.updateStock(order.productId(), order.quantity());
+        shippingService.initiateShipping(order.address());
+        notifier.sendOrderConfirmation(order.email());
     }
 }
